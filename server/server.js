@@ -8,7 +8,11 @@ require("dotenv").config();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.use(cors());
+app.use(
+  cors({
+    allowedHeaders: "https://algo-root-task.netlify.app",
+  })
+);
 connectToDb();
 app.use("/tasks", taskRoutes);
 

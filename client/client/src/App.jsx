@@ -10,7 +10,7 @@ function App() {
 
   useEffect(() => {
     fetchTasks();
-  }, []);
+  }, [tasks]);
 
   const fetchTasks = async () => {
     const response = await axios.get(`${BASE_URL}/tasks`);
