@@ -10,7 +10,8 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(
   cors({
-    allowedHeaders: "https://algo-root-task.netlify.app",
+    origin: "https://algo-root-task.netlify.app",
+    methods: ["GET", "POST", "PUT", "DELETE"],
   })
 );
 connectToDb();
