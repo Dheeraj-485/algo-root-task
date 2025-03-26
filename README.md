@@ -1,5 +1,6 @@
 # Algo Root Task - API Documentation
 
+![Image](https://github.com/user-attachments/assets/07ebcacf-ce2a-4fe0-82e2-aaf23beea8e9)
 ## Table of Contents
 - [Introduction](#introduction)
 - [Installation and Setup](#installation-and-setup)
