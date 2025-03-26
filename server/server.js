@@ -10,7 +10,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(
   cors({
-    origin: "https://algo-root-task.netlify.app",
+    origin: ["https://algo-root-task.netlify.app", "http://localhost:5173"],
     methods: ["GET", "POST", "PUT", "DELETE"],
   })
 );
