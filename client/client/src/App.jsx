@@ -10,7 +10,7 @@ function App() {
 
   useEffect(() => {
     fetchTasks();
-  }, [tasks]);
+  }, []);
 
   const fetchTasks = async () => {
     const response = await axios.get(`${BASE_URL}/tasks`);
@@ -32,6 +32,7 @@ function App() {
             task._id === updatedTask._id ? updatedTask : task
           )
         );
+        fetchTasks();
         toast.success(updatedTask.data.message);
         setEditingTask(null);
       } catch (error) {
@@ -40,6 +41,7 @@ function App() {
     } else {
       try {
         const newTask = await axios.post(`${BASE_URL}/tasks`, { title });
+        fetchTasks();
         setTasks([...tasks, newTask]);
         toast.success(newTask.data.message);
       } catch (error) {
