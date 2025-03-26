@@ -1,0 +1,18 @@
+const express = require("express");
+const { connectToDb } = require("./config/db");
+const taskRoutes = require("./routes/taskroutes");
+const cors = require("cors");
+const app = express();
+require("dotenv").config();
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+app.use(cors());
+connectToDb();
+app.use("/tasks", taskRoutes);
+
+const PORT = process.env.PORT || 8080;
+app.listen(PORT, () => {
+  console.log(`Server is running on PORT ${PORT}`);
+});
